@@ -1,8 +1,11 @@
 import { useFormik } from "formik";
 import { users } from "../../helpers/users";
 import { useNavigate } from "react-router-dom";
+import { UserAuthContext } from "../../context/UserAuthcontext";
+import { useContext } from "react";
 
 const LoginForm = () => {
+  const [, setAuth] = useContext(UserAuthContext);
   const navigate = useNavigate();
   const validate = (values) => {
     const errors = {};
@@ -43,6 +46,7 @@ const LoginForm = () => {
       });
 
       if (userFound) {
+        setAuth(true);
         navigate("/session");
       } else {
         alert("the provided password is wrong");
