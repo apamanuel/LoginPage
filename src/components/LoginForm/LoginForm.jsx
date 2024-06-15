@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
+import { users } from "../../helpers/users";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const validate = (values) => {
     const errors = {};
     const regexUserName = new RegExp(
@@ -33,7 +36,17 @@ const LoginForm = () => {
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      const userFound = users.find((user) => {
+        return (
+          values.userName === user.userName && values.password === user.password
+        );
+      });
+
+      if (userFound) {
+        navigate("/session");
+      } else {
+        alert("the provided password is wrong");
+      }
     },
   });
   return (
