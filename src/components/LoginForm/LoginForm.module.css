@@ -73,3 +73,12 @@
     color: white;
     margin-top: 10px;
 }
+
+@media (max-width: 350px) {
+    .box{
+        width: 250px;
+    }
+    .forgotText{
+        width: 280px;
+    }
+}
