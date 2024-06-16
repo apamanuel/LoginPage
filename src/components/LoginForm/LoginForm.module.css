@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.containerForm{
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.box{
+    width: 270px;
+    height: 45px;
+    top: 395px;
+    left: 490px;
+    gap: 0px;
+    border-radius: 4px;
+    border: 1px solid white;
+    opacity: 0px;    
+    background-color: #2148C0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    padding-left: 30px;
+}
+.box::content{
+    margin-left: 10px;
+}
+.box::placeholder{
+    color:white;
+    font-size: 14px;
+    line-height: 20px;
+    padding-left: 15px;
+}
+.imgForm{
+    width: 20px;
+    height: 20px;
+    padding: 1.67px 2.5px 1.67px 2.5px;
+    margin-top: 12px;
+    margin-left: 5px;
+    position: absolute;
+}
+.errorsContainer{
+    height: 25px;
+    color: white;
+}
+.submit{
+    height: 45px;
+    top: 483px;
+    left: 490px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+    color: #2148C0;
+    margin-top: 20px;
+}
+.forgotText{
+    width: 300px;
+    height: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: end;
+    color: white;
+    margin-top: 10px;
+}

@@ -3,6 +3,9 @@ import { users } from "../../helpers/users";
 import { useNavigate } from "react-router-dom";
 import { UserAuthContext } from "../../context/UserAuthcontext";
 import { useContext } from "react";
+import style from "./LoginForm.module.css";
+import user from "../../assets/user.png";
+import lock from "../../assets/lock.png";
 
 const LoginForm = () => {
   const [, setAuth] = useContext(UserAuthContext);
@@ -54,34 +57,52 @@ const LoginForm = () => {
     },
   });
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <label htmlFor="userName">USERNAME</label>
-      <input
-        id="userName"
-        name="userName"
-        type="email"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.userName}
-      />
-      {formik.touched.userName && formik.errors.userName ? (
-        <div>{formik.errors.userName}</div>
-      ) : null}
+    <form onSubmit={formik.handleSubmit} className={style.containerForm}>
+      <div className={style.inputContainer}>
+        <img src={user} alt="user" className={style.imgForm} />
+        <input
+          id="userName"
+          name="userName"
+          type="email"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.userName}
+          placeholder="USERNAME"
+          className={style.box}
+        />
+        <div className={style.errorsContainer}>
+          {formik.touched.userName && formik.errors.userName ? (
+            <div>{formik.errors.userName}</div>
+          ) : null}
+        </div>
+      </div>
 
-      <label htmlFor="password">PASSWORD</label>
-      <input
-        id="password"
-        name="password"
-        type="text"
-        onChange={formik.handleChange}
-        onBlur={formik.handleBlur}
-        value={formik.values.password}
-      />
-      {formik.touched.password && formik.errors.password ? (
-        <div>{formik.errors.password}</div>
-      ) : null}
+      <div className={style.inputContainer}>
+        <img src={lock} alt="lock" className={style.imgForm} />
+        <input
+          id="password"
+          name="password"
+          type="text"
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+          value={formik.values.password}
+          placeholder="PASSWORD"
+          className={style.box}
+        />
+        <div className={style.errorsContainer}>
+          {formik.touched.password && formik.errors.password ? (
+            <div>{formik.errors.password}</div>
+          ) : null}
+        </div>
+      </div>
 
-      <button type="submit">LOGIN</button>
+      <button type="submit" className={style.submit}>
+        LOGIN
+      </button>
+
+      <div className={style.forgotText}>
+        <a>Forgot password?</a>
+      </div>
     </form>
   );
 };
