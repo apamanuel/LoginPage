@@ -1,8 +1,36 @@
-# React + Vite
+# Login Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This application is a login page featuring a form with fields for username and password. The form is controlled, meaning the user must input a valid email address format in the username field and a combination of letters, numbers, and special characters (@$!%\*#?&.+=<>:;) in the password field.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- **Form Validation**: The form validates that the username is a valid email address and that the password contains the required combination of characters.
+- **Alert Messages**: If the username and password combination is incorrect, an alert with the message "the provided password is wrong" is displayed.
+- **Credentials for Testing**: Login only works with the following credentials:
+  - **Username**: test@luxpmsoft.com
+  - **Password**: test1234
+
+## Important Notes
+
+- The application does not integrate with a backend or API.
+- The credentials are for demonstration and testing purposes only.
+
+## Instructions for Use
+
+1. Open the login page.
+2. Enter the provided credentials into the corresponding fields.
+3. Click on the "Login" button to proceed.
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Formik
+
+## Author
+
+Manuel Aparicio Rocca
